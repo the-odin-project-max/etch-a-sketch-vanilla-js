@@ -9,8 +9,15 @@ function createGrid(numOfSquares) {
 			square.style.width = `${100 / numOfSquares}%`;
 			square.style.height = `${100 / numOfSquares}%`;
 			canva.appendChild(square);
+			initHover();
 		}
 	}
+}
+
+function clearGrid() {
+	document.querySelectorAll(".square").forEach(square => {
+		square.style.backgroundColor = 'white';
+	});
 }
 
 createGrid(16);
@@ -20,6 +27,10 @@ function changeColor(e) {
 	e.target.style.backgroundColor = `#${randomColor}`;
 }
 
-document.querySelectorAll(".square").forEach(square => {
-	square.addEventListener('mouseover', changeColor);
-});
+function initHover() {
+	document.querySelectorAll(".square").forEach(square => {
+		square.addEventListener('mouseover', changeColor);
+	});
+}
+
+document.querySelector('.reset').addEventListener('click', clearGrid);
