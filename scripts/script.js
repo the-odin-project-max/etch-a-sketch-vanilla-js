@@ -1,8 +1,12 @@
 const SQUARE_STYLE_BORDER = '1px solid lightgray';
 
 function changeColor(e) {
-	const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-	e.target.style.backgroundColor = `#${randomColor}`;
+	if (!colorToDraw) {
+		const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+		e.target.style.backgroundColor = `#${randomColor}`;
+	} else {
+		e.target.style.backgroundColor = colorToDraw;
+	}
 }
 
 function initHover() {
@@ -11,11 +15,17 @@ function initHover() {
 	});
 }
 
+let colorToDraw = false;
+let colorPicker = document.querySelector("input[name=colorpicker]");
+colorPicker.addEventListener('input', function () {
+	colorToDraw = colorPicker.value;
+});
+
+
 // Change grid size based on slider
 let rangeInput = document.getElementById("size");
-
-rangeInput.addEventListener("change", function() {
-    document.querySelector(".selected-size").textContent = rangeInput.value;
+rangeInput.addEventListener("change", function () {
+	document.querySelector(".selected-size").textContent = rangeInput.value;
 	createGrid(rangeInput.value);
 }, false);
 // ******* //
@@ -31,16 +41,16 @@ function clearGrid() {
 
 // Add grid square borders
 let gridToggle = document.querySelector("input[name=grid-toggle]");
-
-gridToggle.addEventListener('change', function() {
-  if (this.checked) {
-	document.querySelectorAll(".square").forEach(square => {
-		square.style.border = SQUARE_STYLE_BORDER;
-	});
-  } else {
-	document.querySelectorAll(".square").forEach(square => {
-		square.style.border = 'none';
-	});  }
+gridToggle.addEventListener('change', function () {
+	if (this.checked) {
+		document.querySelectorAll(".square").forEach(square => {
+			square.style.border = SQUARE_STYLE_BORDER;
+		});
+	} else {
+		document.querySelectorAll(".square").forEach(square => {
+			square.style.border = 'none';
+		});
+	}
 });
 // ******* //
 
