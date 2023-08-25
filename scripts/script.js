@@ -20,7 +20,7 @@ function clearGrid() {
 	});
 }
 
-createGrid(16);
+createGrid(2);
 
 function changeColor(e) {
 	const randomColor = Math.floor(Math.random() * 16777215).toString(16);

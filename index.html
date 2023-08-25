@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,16 @@
 		</div>
 	</section>
 	<section class="controls">
+		<label for="size">Size: <span class="selected-size">16</span></label>
+		<input type="range" name="size" id="size" min="1" max="50" value="16">
+		<label for="colorpicker">Color Picker:</label>
+		<input type="color" id="colorpicker" value="#0000ff">
+		<label class="switch">Grid:
+		  <input type="checkbox">
+		  <span class="slider round"></span>
+		</label>
 		<button class="reset">Reset</button>
 	</section>
 </body>
+
 </html>
