@@ -15,21 +15,33 @@
 		<h1 class="pageTitle">Etch-A-Sketch</h1>
 		<h4 class="subtitle">A Vanilla Javascript Edition</h4>
 	</header>
-	<section class="main">
-		<div class="canva">
-		</div>
-	</section>
-	<section class="controls">
-		<label for="size">Size: <span class="selected-size">16</span></label>
-		<input type="range" name="size" id="size" min="1" max="50" value="16">
-		<label for="colorpicker">Color Picker:</label>
-		<input type="color" id="colorpicker" value="#0000ff" name="colorpicker">
-		<button class="random-colors">Random Colors</button>
-		<button class="random-color">Random Color</button>
-		<label for="grid">Grid: </label>
-		<input type="checkbox" name="grid-toggle">
-		<button class="reset">Reset</button>
-	</section>
+	<main>
+		<section class="main">
+			<div class="canva">
+			</div>
+		</section>
+		<section class="controls">
+			<div class="size-control-container">
+				<label for="size">Size: <span class="selected-size">16</span></label>
+				<input type="range" name="size" id="size" min="1" max="50" value="16">
+			</div>
+			<div class="color-control-container">
+				<label for="colorpicker">Color Picker:</label>
+				<input type="color" id="colorpicker" value="#0000ff" name="colorpicker">
+				<div class="color-button-container"><button class="random-colors">Random Colors</button>
+					<button class="random-color">Random Color</button>
+				</div>
+			</div>
+			<div class="grid-toggle-container">
+				<label for="grid">Grid: </label>
+				<input type="checkbox" name="grid-toggle">
+			</div>
+			<button class="reset">Reset</button>
+		</section>
+	</main>
+	<footer>
+		<p>Created by <a href="">@maxteiger</a>©</p>
+	</footer>
 </body>
 
 </html>

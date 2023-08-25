@@ -2,6 +2,14 @@
 	font-family: 'Courier New', Courier, monospace;
 }
 
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+}
+
 .canva {
 	width: 500px;
 	height: 500px;
@@ -21,7 +29,37 @@
 
 header {
 	text-align: center;
+	margin-bottom: 10px;
+}
+/* main */
+main {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 }
 
+/* Controls */
+.controls {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	gap: 10px;
 
-/* Switches */
+	width: 350px;
+	height: 100%;
+	border: 1px solid black;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+input[name='colorpicker'] {
+	display: inline;
+}
+
+/* Footer */
+footer {
+	text-align: center;
+}
