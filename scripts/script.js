@@ -21,6 +21,15 @@ colorPicker.addEventListener('input', function () {
 	colorToDraw = colorPicker.value;
 });
 
+let randomColorBtn = document.querySelector('.random-color');
+randomColorBtn.addEventListener('click', function () {
+	colorToDraw = "#" + Math.floor(Math.random() * 16777215).toString(16);
+});
+
+let randomColorsBtn = document.querySelector('.random-colors');
+randomColorsBtn.addEventListener('click', function () {
+	colorToDraw = false;
+});
 
 // Change grid size based on slider
 let rangeInput = document.getElementById("size");
