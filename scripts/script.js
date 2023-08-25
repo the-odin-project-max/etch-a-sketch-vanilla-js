@@ -33,7 +33,7 @@ randomColorsBtn.addEventListener('click', function () {
 
 // Change grid size based on slider
 let rangeInput = document.getElementById("size");
-rangeInput.addEventListener("change", function () {
+rangeInput.addEventListener("input", function () {
 	document.querySelector(".selected-size").textContent = rangeInput.value;
 	createGrid(rangeInput.value);
 }, false);
