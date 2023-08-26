@@ -23,7 +23,8 @@ colorPicker.addEventListener('input', function () {
 
 let randomColorBtn = document.querySelector('.random-color');
 randomColorBtn.addEventListener('click', function () {
-	colorToDraw = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	colorToDraw = "#" + Math.floor(Math.random() * 16777215).toString(16)
+	colorPicker.value = colorToDraw;
 });
 
 let randomColorsBtn = document.querySelector('.random-colors');
