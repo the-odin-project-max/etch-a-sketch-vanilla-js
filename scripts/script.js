@@ -86,4 +86,28 @@ function createGrid(numOfSquares) {
 	}
 }
 createGrid(rangeInput.value);
+
+// ******* //
+// Function to convert a div to an image
+function downloadDivAsImage() {
+	const divToDownload = document.querySelector('.canva');
+
+	// Use html2canvas to capture the div as an image
+	html2canvas(divToDownload).then(function (canvas) {
+		// Convert the canvas to a data URL
+		const dataURL = canvas.toDataURL('image/png');
+
+		// Create a download link
+		const downloadLink = document.createElement('a');
+		downloadLink.href = dataURL;
+		downloadLink.download = 'mySketch.png';
+
+		// Trigger the download
+		downloadLink.click();
+	});
+}
+
+// Add a click event listener to the download button
+const downloadButton = document.getElementById('downloadButton');
+downloadButton.addEventListener('click', downloadDivAsImage);
 // ******* //
